@@ -1,0 +1,55 @@
+﻿@model Project.Models.Table
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <h1>Enter data of a Friend</h1>
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            <fieldset>
+                <legend>UserModel</legend>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Fid)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Fid)
+                    @Html.ValidationMessageFor(model => model.Fid)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.FriendName)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.FriendName)
+                    @Html.ValidationMessageFor(model => model.FriendName)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Place)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Place)
+                    @Html.ValidationMessageFor(model => model.Place)
+                </div>
+                <p>
+                    <input type="submit" value="Update" />
+                </p>
+            </fieldset>
+        }
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }
+    </div>
+</body>
+</html>
